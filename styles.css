@@ -394,7 +394,8 @@ body {
 
 .dropdown-content.active {
   opacity: 1;
-  max-height: 10em;
+  max-height: 40em;
+  height: auto;
   transition: all .6s ease;
 }
 
@@ -437,6 +438,10 @@ body {
   width: 80%;
   height: 100%;
   margin-bottom: 5em;
+}
+
+.about-card p {
+  margin-inline: 8%;
 }
 
 .about-profile-card {

@@ -1,0 +1,642 @@
+/* styles.css */
+
+
+/* ALL STYLES */
+
+/* Track */
+html {
+  scrollbar-color: #9E9996 #C7C1B7; /* Set your desired track and handle colors */
+}
+
+/* Handle on hover */
+html:hover {
+  scrollbar-color: #9E9996 #C7C1B7; /* Set your desired handle color on hover */
+}
+
+/* Set overscroll-behavior to none to prevent content from shifting */
+body {
+  overscroll-behavior: none;
+}
+
+/* Reset some default styles for consistency */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: 'Philosopher', sans-serif;
+}
+
+/* Set a base font and background color for the entire website */
+body {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #FAF8F0;
+  width: 100vw;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+
+/* Style the header section */
+header {
+  background-color: #394D42;
+  width: 100%;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+header h1 {
+  color: #faf8f0;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.title a {
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.title a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-shadow: 0px 0px 5px #00000030,
+  0px 0px 10px #ffffff;
+}
+
+.main-links nav ul {
+  list-style: none;
+}
+
+.main-links nav ul li {
+  display: inline;
+  margin-inline: 10%;
+}
+
+.main-links nav ul li a {
+  color: #faf8f0;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-links nav ul li a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.twolinks {
+  width: 45%;
+  display: inline-block;
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+
+/* Style the main content section */
+main {
+  text-align: center;
+  padding: 0px;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-inline: 10%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-inline: 15%;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+main ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+
+/* -------- ROADMAP PAGE -------- */
+
+.roadmap-page {
+  width: 80vw;
+  height: auto;
+  margin: auto;
+  display: flex; 
+  align-items: start;
+}
+
+.roadmap-page h2 {
+  text-align: left;
+}
+
+.roadmap-page p {
+  text-align: left;
+  padding-inline: 1.2rem;
+}
+
+.roadmap-page img {
+  display: inline;
+  width: 20vw;
+  height: 120vh;
+  object-fit: cover;
+}
+
+.welcome {
+  background-color: #FAF8F0;
+  top: 0;
+  display: inline-block;
+  min-width: 30rem;
+  width: 40vw;
+  margin-bottom: 10rem;
+}
+
+/* -------HOME PAGE------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+.image-container {
+  display: flex;
+  overflow: clip;
+  width: 100vw;
+  height: 85vh;
+}
+
+.image-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.image-item {
+  padding: 0px;
+  border: none;
+  outline: none;
+  width: 33.3333%;
+  transition: all 1s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-item:hover {
+  flex-grow: 1;
+  width: 50%;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
+  opacity: 0; /* Set the overlay to be initially invisible */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as needed */
+  color: white; /* Adjust the text color as needed */
+  transition: opacity 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.image-item:hover .overlay {
+  opacity: 1; /* Make the overlay visible on hover */
+}
+
+.overlay h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  font-size: 1rem;
+  padding-inline: 5%;
+  margin-top: 15px;
+}
+
+.image-item::before {
+  content: attr(image-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: #ffffff;
+  background: linear-gradient(#00000090, #ffffff00 60%);
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-item:hover::before {
+  opacity: 1;
+}
+
+.image-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,#FAF8F0, #ffffff00 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.image-item.active::after {
+  opacity: 1;
+}
+
+.text-containter {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 40vw;
+  height: auto;
+}
+
+
+/* ------- CONTENT FOR EACH HOME BUTTON ------- */
+
+#content-area {
+  background-color: #FAF8F0;
+  padding: 0px;
+}
+
+.content-item {
+  text-align: center;
+  display: none;
+}
+
+.content-item.active {
+  display: inline-flex;
+  height: auto;
+  margin-bottom: 8em;
+}
+
+.content-item h2 {
+  display: block;
+  margin-top: 3em;
+}
+
+.content-item p {
+  display: block;
+  min-width: 20em;
+  max-width: 50em;
+  margin-inline: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* -------- Product Page --------*/
+
+.product-container {
+  display: inline-block;
+  width: 80vw;
+  height: auto;
+  margin-top: 4em;
+  margin-bottom: 6em;
+}
+
+.product-card {
+  vertical-align: top;
+  display: inline-block;
+  min-width: 20em;
+  width: 30%;
+  min-height: 35em;
+  height: auto;
+  background-color: #C7C1B7;
+  margin-inline: .4em;
+  margin-bottom: 1.1em;
+}
+
+.product-card h3 {
+  margin: 5%;
+}
+
+.product-card p {
+  margin-inline: 10%;
+  margin-bottom: 2em;
+}
+
+
+/* --------------------- */
+/* ------- ABOUT ------- */
+/* --------------------- */
+
+.dropdown-container {
+  display: inline grid;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dropdown-button {
+  align-items: center;
+  background: none;
+  display: flex;
+  padding: 0px;
+  border: none;
+  outline: none;
+  width: 100%;
+  transition: all 1s ease;
+  cursor: pointer;
+  position: relative;
+  flex-grow: 0;
+  transition: all 0.5s ease;
+}
+
+.dropdown-button:hover {
+  cursor: pointer;
+  margin: 0;
+  background-color: #c7c1b7a4;
+}
+
+.dropdown-button img {
+  object-fit: cover;
+  width: 5em;
+  height: 5em;
+}
+
+.dropdown-button h2 {
+  font-size: 1.3rem;
+  color: #394D42;
+  margin-top: .8em;
+  margin-bottom: .8em;
+  margin-left: 0;
+  padding: 0px;
+}
+
+.dropdown-content {
+  margin: 0;
+  display: flex;
+  opacity: 0;
+  background-color: #faf8f0b0;
+  width: 100%;
+  max-height: 0em;
+  flex-grow: 1;
+  overflow: hidden;
+  transition: all .4s ease;
+}
+
+.dropdown-content.active {
+  opacity: 1;
+  max-height: 10em;
+  transition: all .6s ease;
+}
+
+.dropdown-content p {
+  text-align: left;
+  overflow: hidden;
+  min-width: 15em;
+  max-width: 50em;
+  margin-inline: 4em;
+  margin-top: .8em;
+  margin-bottom: 1em;
+}
+
+
+/* ------- ABOUT ------- */
+
+.about-page {
+  width: 100vw;
+  margin-top: 5em;
+  margin-bottom: 2em;
+  display: inline;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.about-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: start;
+  width: 80vw;
+  height: 100%;
+  margin-bottom: 4em;
+}
+
+.about-card {
+  text-align: left;
+  max-width: 50rem;
+  min-width: 20rem;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 5em;
+}
+
+.about-profile-card {
+  background-color: #c7c1b7a4;
+  text-align: center;
+  width: 40%;
+  min-width: 30em;
+  height: auto;
+  min-height: 36em;
+  padding-bottom: 4em;
+  margin-bottom: 2em;
+}
+
+.about-profile-card img {
+  margin-top: 4em;
+  margin-bottom: 0em;
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-profile-card p {
+  font-size: 1rem;
+  margin-inline: 2em;
+}
+
+
+/* -------- CONTACT --------- */
+
+.contact-page {
+  background-color: none;
+  max-width: 80vw;
+  margin-top: 5em;
+  margin-bottom: 2em;
+  display: inline-flex; 
+  align-items: start;
+}
+
+.contact-container {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card {
+  text-align: center;
+  margin-inline: 1em;
+  width: 8em;
+  height: 8em;
+  border: none;
+  outline: none;
+}
+
+.contact-card img {
+  margin-bottom: .5em;
+  width: 4em;
+  height: auto;
+  object-fit: cover;
+}
+
+.contact-card ul a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #394D42;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ------- FOOTER ------- */
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #394D42;
+  color: #fff;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Additional styling for links in the footer */
+footer p {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer p:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Media query for tablets (e.g., iPads) */
+@media (max-width: 1024px) {
+  /* CSS rules specific to tablets */
+
+}
+
+/* Media query for smaller devices (e.g., iPhones) */
+@media (max-width: 768px) {
+  /* CSS rules specific to smaller devices */
+
+.main-links nav ul li a {
+  font-size: .9em;
+}
+
+.content-item p {
+  display: block;
+  min-width: 16em;
+  margin-inline: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* Roadmap */
+
+.welcome {
+  min-width: 15rem;
+  width: 40vw;
+}
+
+/* Products */
+
+.image-item:hover {
+  flex-grow: 1;
+  width: 120%;
+  cursor: pointer;
+}
+
+.text-containter {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 50vw;
+  height: auto;
+}
+
+/* About */
+
+.about-container {
+  width: 90vw;
+}
+  
+.about-profile-card p {
+  margin-inline: 1em;
+}
+
+.about-card {
+  text-align: left;
+  max-width: 50rem;
+  min-width: 20rem;
+  width: 80%;
+  height: 100%;
+  margin-bottom: 5em;
+}
+
+.about-profile-card {
+  background-color: #c7c1b783;
+  text-align: center;
+  width: 40%;
+  min-width: 20em;
+  height: auto;
+  padding-bottom: 4em;
+  margin-bottom: 2em;
+}
+
+.about-profile-card p {
+  font-size: 1rem;
+  margin-inline: 2em;
+}
+
+/* Contact */
+
+.contact-card {
+  text-align: center;
+  margin-inline: .5em;
+  width: 50%;
+  height: 80%;
+}
+
+.social-button img {
+  margin-bottom: .5em;
+  width: 4em;
+  height: 4em;
+  object-fit: cover;
+}
+
+.contact-card ul a {
+  list-style-type: none;
+  text-decoration: underline;
+  color: #394D42;
+  font-size: .8rem;
+}
+
+}
+
+/* !!!!!!please work!!!!!! */

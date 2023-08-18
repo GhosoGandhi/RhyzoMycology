@@ -39,11 +39,13 @@ var corevalueicon3 = document.getElementById("corevalue-icon3");
 if(pathname == "/about.html"){
   if(localData == "light"){
     document.body.classList.remove("dark-theme");
+    icon.src = "Content/MoonIcon.svg";
     corevalueicon1.src = "Content/VirtueOverProfit.png";
     corevalueicon2.src = "Content/HealingCommunity.png";
     corevalueicon3.src = "Content/PeaceAndPurpose.png";
   }else if(localData == "dark"){
     document.body.classList.add("dark-theme");
+    icon.src = "Content/SunIcon.svg";
     corevalueicon1.src = "Content/VirtueOverProfitWhite.png";
     corevalueicon2.src = "Content/HealingCommunityWhite.png";
     corevalueicon3.src = "Content/PeaceAndPurposeWhite.png";
@@ -53,11 +55,13 @@ if(pathname == "/about.html"){
     document.body.classList.toggle("dark-theme")
     if(document.body.classList.contains("dark-theme")){
       localStorage.setItem("theme", "dark");
+      icon.src = "Content/SunIcon.svg";
       corevalueicon1.src = "Content/VirtueOverProfitWhite.png";
       corevalueicon2.src = "Content/HealingCommunityWhite.png";
       corevalueicon3.src = "Content/PeaceAndPurposeWhite.png";
     }else{
       localStorage.setItem("theme", "light");
+      icon.src = "Content/MoonIcon.svg";
       corevalueicon1.src = "Content/VirtueOverProfit.png";
       corevalueicon2.src = "Content/HealingCommunity.png";
       corevalueicon3.src = "Content/PeaceAndPurpose.png";
@@ -73,12 +77,14 @@ var socialicon4 = document.getElementById("social-icon4");
 if(pathname == "/contact.html"){
   if(localData == "light"){
     document.body.classList.remove("dark-theme");
+    icon.src = "Content/MoonIcon.svg";
     socialicon1.src = "Content/FacebookIconGreen.svg";
     socialicon2.src = "Content/InstagramIconGreen.svg";
     socialicon3.src = "Content/DiscordIconGreen.svg";
     socialicon4.src = "Content/YouTubeIconGreen.svg";
   }else if(localData == "dark"){
     document.body.classList.add("dark-theme");
+    icon.src = "Content/SunIcon.svg";
     socialicon1.src = "Content/FacebookIconWhite.svg";
     socialicon2.src = "Content/InstagramIconWhite.svg";
     socialicon3.src = "Content/DiscordIconWhite.svg";
@@ -89,12 +95,14 @@ if(pathname == "/contact.html"){
     document.body.classList.toggle("dark-theme")
     if(document.body.classList.contains("dark-theme")){
       localStorage.setItem("theme", "dark");
+      icon.src = "Content/SunIcon.svg";
       socialicon1.src = "Content/FacebookIconWhite.svg";
       socialicon2.src = "Content/InstagramIconWhite.svg";
       socialicon3.src = "Content/DiscordIconWhite.svg";
       socialicon4.src = "Content/YouTubeIconWhite.svg";
     }else{
       localStorage.setItem("theme", "light");
+      icon.src = "Content/MoonIcon.svg";
       socialicon1.src = "Content/FacebookIconGreen.svg";
       socialicon2.src = "Content/InstagramIconGreen.svg";
       socialicon3.src = "Content/DiscordIconGreen.svg";

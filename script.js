@@ -11,11 +11,12 @@ if(localStorage.getItem("theme") == null){
 let localData = localStorage.getItem("theme");
 
 if(localData == "light"){
-  icon.src = "Content/MoonIcon.svg";
   document.body.classList.remove("dark-theme");
+  icon.src = "Content/MoonIcon.svg";
 }else if(localData == "dark"){
-  icon.src = "Content/SunIcon.svg";
   document.body.classList.add("dark-theme");
+  icon.src = "Content/SunIcon.svg";
+
 }
 
 icon.onclick = function(){
@@ -28,6 +29,72 @@ icon.onclick = function(){
     icon.src = "Content/MoonIcon.svg";
   }
 }
+
+var pathname = window.location.pathname;
+
+var corevalueicon1 = document.getElementById("corevalue-icon1");
+var corevalueicon2 = document.getElementById("corevalue-icon2");
+var corevalueicon3 = document.getElementById("corevalue-icon3");
+
+if(pathname == "/about.html"){
+  if(localData == "light"){
+    corevalueicon1.src = "Content/VirtueOverProfit.png";
+    corevalueicon2.src = "Content/HealingCommunity.png";
+    corevalueicon3.src = "Content/PeaceAndPurpose.png";
+  }else if(localData == "dark"){
+    corevalueicon1.src = "Content/VirtueOverProfitWhite.png";
+    corevalueicon2.src = "Content/HealingCommunityWhite.png";
+    corevalueicon3.src = "Content/PeaceAndPurposeWhite.png";
+  }
+
+  icon.onclick = function(){
+    document.body.classList.toggle("dark-theme")
+    if(document.body.classList.contains("dark-theme")){
+      corevalueicon1.src = "Content/VirtueOverProfitWhite.png";
+      corevalueicon2.src = "Content/HealingCommunityWhite.png";
+      corevalueicon3.src = "Content/PeaceAndPurposeWhite.png";
+    }else{
+      corevalueicon1.src = "Content/VirtueOverProfit.png";
+      corevalueicon2.src = "Content/HealingCommunity.png";
+      corevalueicon3.src = "Content/PeaceAndPurpose.png";
+    }
+  }
+}
+
+var socialicon1 = document.getElementById("social-icon1");
+var socialicon2 = document.getElementById("social-icon2");
+var socialicon3 = document.getElementById("social-icon3");
+var socialicon4 = document.getElementById("social-icon4");
+
+if(pathname == "/contact.html"){
+  if(localData == "light"){
+    socialicon1.src = "Content/FacebookIconGreen.svg";
+    socialicon2.src = "Content/InstagramIconGreen.svg";
+    socialicon3.src = "Content/DiscordIconGreen.svg";
+    socialicon4.src = "Content/YouTubeIconGreen.svg";
+  }else if(localData == "dark"){
+    socialicon1.src = "Content/FacebookIconWhite.svg";
+    socialicon2.src = "Content/InstagramIconWhite.svg";
+    socialicon3.src = "Content/DiscordIconWhite.svg";
+    socialicon4.src = "Content/YouTubeIconWhite.svg";
+  }
+
+  icon.onclick = function(){
+    document.body.classList.toggle("dark-theme")
+    if(document.body.classList.contains("dark-theme")){
+      socialicon1.src = "Content/FacebookIconWhite.svg";
+      socialicon2.src = "Content/InstagramIconWhite.svg";
+      socialicon3.src = "Content/DiscordIconWhite.svg";
+      socialicon4.src = "Content/YouTubeIconWhite.svg";
+    }else{
+      socialicon1.src = "Content/FacebookIconGreen.svg";
+      socialicon2.src = "Content/InstagramIconGreen.svg";
+      socialicon3.src = "Content/DiscordIconGreen.svg";
+      socialicon4.src = "Content/YouTubeIconGreen.svg";
+    }
+  }
+}
+
 
 //Add content below button
 

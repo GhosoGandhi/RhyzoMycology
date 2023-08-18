@@ -351,6 +351,7 @@ body {
   margin-bottom: 1.1em;
   padding-top: 1em;
   padding-bottom: 1em;
+  border-radius: .5em;
 }
 
 .product-card h3 {
@@ -419,6 +420,7 @@ body {
   flex-grow: 1;
   overflow: hidden;
   transition: all .4s ease;
+  border-radius: .5em;
 }
 
 .dropdown-content.active {
@@ -480,6 +482,7 @@ body {
   min-height: 36em;
   padding-bottom: 4em;
   margin-bottom: 2em;
+  border-radius: .5em;
 }
 
 .about-profile-card img {

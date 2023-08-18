@@ -2,13 +2,6 @@ let productsData = {}; // Declare and define productsData as an empty object
 
 //Add dark mode
 
-var corevalue1 = document.getElementById("corevalue-icon1")
-var corevalue2 = document.getElementById("corevalue-icon2")
-var corevalue3 = document.getElementById("corevalue-icon3")
-var social1 = document.getElementById("social-icon1")
-var social2 = document.getElementById("social-icon2")
-var social3 = document.getElementById("social-icon3")
-var social4 = document.getElementById("social-icon4")
 var icon = document.getElementById("darkmode-icon");
 
 if(localStorage.getItem("theme") == null){
@@ -18,10 +11,10 @@ if(localStorage.getItem("theme") == null){
 let localData = localStorage.getItem("theme");
 
 if(localData == "light"){
-  icon.src = "Content/DiscordIconWhite.svg";
+  icon.src = "Content/MoonIcon.svg";
   document.body.classList.remove("dark-theme");
 }else if(localData == "dark"){
-  icon.src = "Content/InstagramIconWhite.svg";
+  icon.src = "Content/SunIcon.svg";
   document.body.classList.add("dark-theme");
 }
 
@@ -29,24 +22,10 @@ icon.onclick = function(){
   document.body.classList.toggle("dark-theme")
   if(document.body.classList.contains("dark-theme")){
     localStorage.setItem("theme", "dark");
-    corevalue1.src = "Content/VirtueOverProfitWhite.png";
-    corevalue2.src = "Content/HealingCommunityWhite.png";
-    corevalue3.src = "Content/PeaceAndPurposeWhite.png";
-    social1.src = "Content/FacebookIconWhite.svg";
-    social2.src = "Content/InstagramIconWhite.svg";
-    social3.src = "Content/DiscordIconWhite.svg";
-    social4.src = "Content/YouTubeIconWhite.svg";
-    icon.src = "Content/InstagramIconWhite.svg";
+    icon.src = "Content/SunIcon.svg";
   }else{
     localStorage.setItem("theme", "light");
-    corevalue1.src = "Content/VirtueOverProfit.png";
-    corevalue2.src = "Content/HealingCommunity.png";
-    corevalue2.src = "Content/PeaceAndPurpose.png";
-    social1.src = "Content/FacebookIconGreen.svg";
-    social2.src = "Content/InstagramIconGreen.svg";
-    social3.src = "Content/DiscordIconGreen.svg";
-    social4.src = "Content/YouTubeIconGreen.svg";
-    icon.src = "Content/DiscordIconWhite.svg";
+    icon.src = "Content/MoonIcon.svg";
   }
 }
 

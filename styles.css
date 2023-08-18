@@ -1,7 +1,20 @@
 /* styles.css */
 
+:root{
+  --primary-color: #faf8f0;
+  --secondary-color: #c7c1b7;
+  --shadow-color: #57514e80;
+  --header-color: #000000;
+  --text-color: #272421;
+}
 
-/* ALL STYLES */
+.dark-theme{
+  --primary-color: #1f1b1a;
+  --secondary-color: #1b1615;
+  --shadow-color: #00000080;
+  --header-color: #FAF8F0;
+  --text-color: #C7C1B7;
+}
 
 /* Track */
 html {
@@ -31,7 +44,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #FAF8F0;
+  background-color: var(--primary-color);
   width: 100vw;
   overflow-x: hidden;
   font-size: 1rem;
@@ -46,6 +59,12 @@ header {
   padding-bottom: 10px;
   text-align: center;
   font-size: 1.2rem;
+  box-shadow: 0 0 1em .5em var(--shadow-color);
+}
+
+header img {
+  width: 2.2em;
+  height: 2.2em;
 }
 
 header h1 {
@@ -54,16 +73,20 @@ header h1 {
   margin-bottom: 10px;
 }
 
+.title {
+  display: inline-flex;
+}
+
 .title a {
   font-size: 2.4rem;
   text-decoration: none;
-  color: #fff;
+  color: #FAF8F0;
 }
 
 .title a:hover {
-  color: rgb(255, 255, 255);
+  color: #faf8f0;
   font-weight: bold;
-  text-shadow: 0px 0px 5px #00000030,
+  text-shadow: 0px 0px 5px #00000080,
   0px 0px 10px #ffffff;
 }
 
@@ -83,7 +106,7 @@ header h1 {
 }
 
 .main-links nav ul li a:hover {
-  color: rgb(255, 255, 255);
+  color: #FAF8F0;
   font-weight: bold;
 }
 
@@ -102,6 +125,7 @@ main {
 }
 
 main h2 {
+  color: var(--header-color);
   font-size: 1.5rem;
   margin-inline: 10%;
   margin-top: 40px;
@@ -109,6 +133,7 @@ main h2 {
 }
 
 main p {
+color: var(--text-color);
   margin-inline: 15%;
   margin-bottom: 15px;
   font-size: 1rem;
@@ -147,7 +172,7 @@ main ul {
 }
 
 .welcome {
-  background-color: #FAF8F0;
+  background-color: var(--primary-color);
   top: 0;
   display: inline-block;
   min-width: 30rem;
@@ -205,7 +230,7 @@ body {
   text-align: center;
   opacity: 0; /* Set the overlay to be initially invisible */
   background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as needed */
-  color: white; /* Adjust the text color as needed */
+  color: #FAF8F0; /* Adjust the text color as needed */
   transition: opacity 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
@@ -214,11 +239,13 @@ body {
 }
 
 .overlay h2 {
+  color: #FAF8F0;
   margin-top: 30px;
   font-size: 1.5rem;
 }
 
 .overlay p {
+  color: #C7C1B7;
   font-size: 1rem;
   padding-inline: 5%;
   margin-top: 15px;
@@ -232,7 +259,6 @@ body {
   width: 100%;
   height: 100%;
   padding: 10px;
-  color: #ffffff;
   background: linear-gradient(#00000090, #ffffff00 60%);
   text-align: center;
   box-sizing: border-box;
@@ -251,13 +277,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top,#FAF8F0, #ffffff00 60%);
+  background: linear-gradient(to top, var(--primary-color), #ffffff00 60%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
+  box-shadow: 0 0 1em .5em #000000;
 }
 
 .image-item.active::after {
+  z-index: 1;
   opacity: 1;
 }
 
@@ -273,7 +301,7 @@ body {
 /* ------- CONTENT FOR EACH HOME BUTTON ------- */
 
 #content-area {
-  background-color: #FAF8F0;
+  box-shadow: 0 0 1em .5em var(--shadow-color);
   padding: 0px;
 }
 
@@ -302,41 +330,42 @@ body {
   margin-bottom: 1em;
 }
 
-/* -------- Product Page --------*/
+/* -------- PRODUCT PAGE --------*/
 
 .product-container {
   display: inline-block;
+  max-width: 60em;
   width: 80vw;
   height: auto;
   margin-top: 4em;
   margin-bottom: 6em;
+  justify-content: space-around;
 }
 
 .product-card {
-  vertical-align: top;
-  display: inline-block;
   min-width: 20em;
-  width: 30%;
-  min-height: 35em;
+  width: 100%;
   height: auto;
-  background-color: #C7C1B7;
-  margin-inline: .4em;
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 0 1em .4em var(--shadow-color);
   margin-bottom: 1.1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .product-card h3 {
-  margin: 5%;
+  color: var(--header-color);
+  margin-top: 2em;
+  margin: 1em;
 }
 
 .product-card p {
+  color: var(--text-color);
   margin-inline: 10%;
   margin-bottom: 2em;
 }
 
-
-/* --------------------- */
-/* ------- ABOUT ------- */
-/* --------------------- */
+/* ------- ABOUT PAGE ------- */
 
 .dropdown-container {
   display: inline grid;
@@ -362,7 +391,7 @@ body {
 .dropdown-button:hover {
   cursor: pointer;
   margin: 0;
-  background-color: #c7c1b7a4;
+  background-color: var(--secondary-color);
 }
 
 .dropdown-button img {
@@ -373,7 +402,6 @@ body {
 
 .dropdown-button h2 {
   font-size: 1.3rem;
-  color: #394D42;
   margin-top: .8em;
   margin-bottom: .8em;
   margin-left: 0;
@@ -384,7 +412,8 @@ body {
   margin: 0;
   display: flex;
   opacity: 0;
-  background-color: #faf8f0b0;
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 0 .5em .2em var(--shadow-color);
   width: 100%;
   max-height: 0em;
   flex-grow: 1;
@@ -408,9 +437,6 @@ body {
   margin-top: .8em;
   margin-bottom: 1em;
 }
-
-
-/* ------- ABOUT ------- */
 
 .about-page {
   width: 100vw;
@@ -445,7 +471,8 @@ body {
 }
 
 .about-profile-card {
-  background-color: #c7c1b7a4;
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 0 1em .4em var(--shadow-color);
   text-align: center;
   width: 40%;
   min-width: 30em;
@@ -462,6 +489,7 @@ body {
   height: 12em;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 0 1em .4em var(--shadow-color);
 }
 
 .about-profile-card p {
@@ -469,8 +497,7 @@ body {
   margin-inline: 2em;
 }
 
-
-/* -------- CONTACT --------- */
+/* -------- CONTACT PAGE --------- */
 
 .contact-page {
   background-color: none;
@@ -508,7 +535,7 @@ body {
 .contact-card ul a {
   list-style-type: none;
   text-decoration: none;
-  color: #394D42;
+  color: var(--text-color);
   padding: 0;
   margin: 0;
   font-size: 1rem;
@@ -522,10 +549,11 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #394D42;
-  color: #fff;
+  color: #C7C1B7;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  box-shadow: 0 0 1em .5em var(--shadow-color);
 }
 
 /* Additional styling for links in the footer */
@@ -538,7 +566,16 @@ footer p:hover {
   text-decoration: underline;
 }
 
+#darkmode-icon {
+  margin-left: 1em;
+  display: flex;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+}
 
+
+/* -------- DEVICE SPECIFIC -------- */
 
 /* Media query for tablets (e.g., iPads) */
 @media (max-width: 1024px) {
@@ -605,7 +642,6 @@ footer p:hover {
 }
 
 .about-profile-card {
-  background-color: #c7c1b783;
   text-align: center;
   width: 40%;
   min-width: 20em;
@@ -637,11 +673,7 @@ footer p:hover {
 
 .contact-card ul a {
   list-style-type: none;
-  text-decoration: underline;
-  color: #394D42;
   font-size: .8rem;
 }
 
 }
-
-/* !!!!!!please work!!!!!! */

@@ -3,7 +3,7 @@
 :root{
   --primary-color: #faf8f0;
   --secondary-color: #c7c1b7;
-  --shadow-color: #57514e80;
+  --shadow-color: #746a6580;
   --header-color: #000000;
   --text-color: #272421;
 }
@@ -11,7 +11,7 @@
 .dark-theme{
   --primary-color: #1f1b1a;
   --secondary-color: #1b1615;
-  --shadow-color: #00000080;
+  --shadow-color: #14131280;
   --header-color: #FAF8F0;
   --text-color: #C7C1B7;
 }
@@ -547,9 +547,11 @@ body {
 /* ------- FOOTER ------- */
 
 footer {
+  display: inline-block;
   position: absolute;
   left: 0;
   bottom: 0;
+  min-height: 2.5em;
   width: 100%;
   background-color: #394D42;
   color: #C7C1B7;
@@ -561,6 +563,7 @@ footer {
 
 /* Additional styling for links in the footer */
 footer p {
+  font-size: 1em;
   color: #fff;
   text-decoration: none;
 }
@@ -570,8 +573,10 @@ footer p:hover {
 }
 
 #darkmode-icon {
+  position: absolute;
   margin-left: 1em;
   display: flex;
+  bottom: .4em;
   width: 3em;
   height: 3em;
   cursor: pointer;

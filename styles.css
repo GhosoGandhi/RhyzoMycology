@@ -2,7 +2,8 @@
 
 :root{
   --primary-color: #faf8f0;
-  --secondary-color: #c7c1b7;
+  --primary-color-translucent: #faf8f085;
+  --secondary-color: #c7c1b781;
   --shadow-color: #746a6580;
   --header-color: #000000;
   --text-color: #272421;
@@ -10,7 +11,8 @@
 
 .dark-theme{
   --primary-color: #1f1b1a;
-  --secondary-color: #1b1615;
+  --primary-color-translucent: #1f1b1a81;
+  --secondary-color: #1b161580;
   --shadow-color: #14131280;
   --header-color: #FAF8F0;
   --text-color: #C7C1B7;
@@ -50,16 +52,32 @@ body {
   font-size: 1rem;
 }
 
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
 /* Style the header section */
 header {
   background-color: #394D42;
-  width: 100%;
+  height: 3.5em;
   color: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
   font-size: 1.2rem;
-  box-shadow: 0 0 1em .5em var(--shadow-color);
+}
+
+.home-header {
+  background-color: #1f1b1a81;
+  height: 3.5em;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 header img {
@@ -70,7 +88,6 @@ header img {
 header h1 {
   color: #faf8f0;
   font-size: 2.4rem;
-  margin-bottom: 10px;
 }
 
 .title {
@@ -117,18 +134,63 @@ header h1 {
   overflow : hidden;
 }
 
+/* Parallax Image */
+
+.parallax {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  align-content: center;
+  width: 100vw;
+  min-height: 90%;
+  transform-style: preserve-3d;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.parallax img {
+  left: 0;
+  top: 0;
+}
+
+.background {
+  top: 0;
+  transform: translateZ(-40px) scale(5.5);
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+}
 
 /* Style the main content section */
 main {
-  text-align: center;
-  padding: 0px;
+  min-height: 10vh;
+  margin-top: 0;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.main-home {
+  background-color: var(--primary-color-translucent);
+  min-height: 10vh;
+  margin-top: 0;
+  backdrop-filter: blur(5px);
+  justify-content: space-around;
+  overflow: hidden;
 }
 
 main h2 {
   color: var(--header-color);
-  font-size: 1.5rem;
+  font-size: 2rem; 
   margin-inline: 10%;
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
@@ -144,43 +206,59 @@ main ul {
   margin-bottom: 15px;
 }
 
-
-/* -------- ROADMAP PAGE -------- */
-
-.roadmap-page {
-  width: 80vw;
-  height: auto;
-  margin: auto;
-  display: flex; 
-  align-items: start;
-}
-
-.roadmap-page h2 {
-  text-align: left;
-}
-
-.roadmap-page p {
-  text-align: left;
-  padding-inline: 1.2rem;
-}
-
-.roadmap-page img {
-  display: inline;
-  width: 20vw;
-  height: 120vh;
-  object-fit: cover;
-}
-
-.welcome {
-  background-color: var(--primary-color);
-  top: 0;
-  display: inline-block;
-  min-width: 30rem;
-  width: 40vw;
-  margin-bottom: 10rem;
+.discription-container {
+  padding-top: 4em;
+  margin-bottom: 2em;
 }
 
 /* -------HOME PAGE------- */
+
+.home-page {
+  width: 55%;
+  display: wrap;
+  text-align: center;
+  background-color: var(--primary-color);
+  min-width: 25em;
+  min-height: 44em;
+}
+
+.space-home {
+  height: 26em;
+  text-align: left;
+}
+
+.space-home h2 {
+  margin-left: 7%;
+  margin-top: .8em;
+  color: #ffffff;
+  font-size: 8em;
+  text-shadow: #000000 0 0 10px;
+}
+
+.space-home p {
+  margin-left: 7%;
+  color: #ffffff;
+  font-size: 4em;
+  text-shadow: #000000 0 0 10px;
+}
+
+.olivia {
+  position: absolute;
+  width: 100vw;
+  text-align: right;
+}
+
+.olivia p {
+  color: var(--header-color);
+  position: relative;
+  margin: 0;
+  top: .5em;
+  right: 3em;
+}
+
+.olivia p a {
+  color: var(--header-color);
+}
 
 body {
   margin: 0;
@@ -202,140 +280,45 @@ body {
   height: 100%;
 }
 
-.image-item {
-  padding: 0px;
-  border: none;
-  outline: none;
-  width: 33.3333%;
-  transition: all 1s ease;
-  cursor: pointer;
+.content-area {
+  min-height: 24em;
   position: relative;
-}
-
-.image-item:hover {
-  flex-grow: 1;
-  width: 50%;
-  cursor: pointer;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  display: block;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  text-align: center;
-  opacity: 0; /* Set the overlay to be initially invisible */
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as needed */
-  color: #FAF8F0; /* Adjust the text color as needed */
-  transition: opacity 0.3s ease-in-out; /* Add a smooth transition effect */
-}
-
-.image-item:hover .overlay {
-  opacity: 1; /* Make the overlay visible on hover */
-}
-
-.overlay h2 {
-  color: #FAF8F0;
-  margin-top: 30px;
-  font-size: 1.5rem;
-}
-
-.overlay p {
-  color: #C7C1B7;
-  font-size: 1rem;
-  padding-inline: 5%;
-  margin-top: 15px;
-}
-
-.image-item::before {
-  content: attr(image-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: linear-gradient(#00000090, #ffffff00 60%);
-  text-align: center;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.image-item:hover::before {
-  opacity: 1;
-}
-
-.image-item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, var(--primary-color), #ffffff00 60%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  box-shadow: 0 0 1em .5em #000000;
-}
-
-.image-item.active::after {
-  z-index: 1;
-  opacity: 1;
-}
-
-.text-containter {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 40vw;
   height: auto;
-}
-
-
-/* ------- CONTENT FOR EACH HOME BUTTON ------- */
-
-#content-area {
-  box-shadow: 0 0 1em .5em var(--shadow-color);
-  padding: 0px;
+  display: inline-block;
+  justify-content: center;
 }
 
 .content-item {
-  text-align: center;
-  display: none;
-}
-
-.content-item.active {
-  display: inline-flex;
-  height: auto;
-  margin-bottom: 8em;
+  width: 100%;
+  padding-top: 6em;
 }
 
 .content-item h2 {
-  display: block;
-  margin-top: 3em;
+  text-align: left;
+  margin-left: 13%;
 }
 
 .content-item p {
-  display: block;
-  min-width: 20em;
-  max-width: 50em;
-  margin-inline: 5em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  text-align: left;
+  margin-left: 13%;
+  max-width: 40em;
 }
 
 /* -------- PRODUCT PAGE --------*/
 
+.products-page {
+  width: 70%;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--primary-color);
+  min-width: 25em;
+}
+
 .product-container {
   display: inline-block;
   max-width: 60em;
-  width: 80vw;
+  width: 80%;
   height: auto;
   margin-top: 4em;
   margin-bottom: 6em;
@@ -348,6 +331,7 @@ body {
   height: auto;
   background-color: var(--secondary-color);
   box-shadow: inset 0 0 1em .4em var(--shadow-color);
+  backdrop-filter: blur(5px);
   margin-bottom: 1.1em;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -368,9 +352,20 @@ body {
 
 /* ------- ABOUT PAGE ------- */
 
+.about-page {
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: var(--primary-color);
+  width: 70%;
+  min-width: 25em;
+  align-items: start;
+}
+
 .dropdown-container {
-  display: inline grid;
+  display: inline-block;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
 }
 
@@ -440,15 +435,6 @@ body {
   margin-bottom: 1em;
 }
 
-.about-page {
-  width: 100vw;
-  margin-top: 5em;
-  margin-bottom: 2em;
-  display: inline;
-  flex-wrap: wrap;
-  align-items: start;
-}
-
 .about-container {
   display: inline-flex;
   flex-wrap: wrap;
@@ -503,15 +489,19 @@ body {
 /* -------- CONTACT PAGE --------- */
 
 .contact-page {
-  background-color: none;
-  max-width: 80vw;
-  margin-top: 5em;
-  margin-bottom: 2em;
-  display: inline-flex; 
-  align-items: start;
+  width: 70%;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--primary-color);
+  min-width: 25em;
+  min-height: 58em;
 }
 
 .contact-container {
+  background-color: none;
+  max-width: 50vw;
+  margin-top: 5em;
+  margin-bottom: 2em;
   display: inline-flex;
   justify-content: space-around;
   align-items: start;
@@ -548,20 +538,17 @@ body {
 
 footer {
   display: inline-block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  min-height: 2.5em;
+  position: relative;
+  height: 2.5em;
   width: 100%;
   background-color: #394D42;
   color: #C7C1B7;
   text-align: center;
-  padding-top: 16px;
-  padding-bottom: 10px;
+  padding-top: 1em;
+  padding-bottom: .8em;
   box-shadow: 0 0 1em .5em var(--shadow-color);
 }
 
-/* Additional styling for links in the footer */
 footer p {
   font-size: 1em;
   color: #fff;
@@ -576,7 +563,7 @@ footer p:hover {
   position: absolute;
   margin-left: 1em;
   display: flex;
-  bottom: .4em;
+  top: .8em;
   width: 3em;
   height: 3em;
   cursor: pointer;
@@ -599,41 +586,45 @@ footer p:hover {
   font-size: .9em;
 }
 
+main {
+  min-height: 50%;
+}
+
+.home-page {
+  width: 100%;
+}
+
+.space-home p {
+  font-size: 2.6em;
+}
+
+.content-item h2 {
+  text-align: center;
+}
+
 .content-item p {
   display: block;
-  min-width: 16em;
-  margin-inline: 2em;
+  text-align: center;
+  width: auto;
+  min-width: 12em;
+  margin-inline: 3em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-/* Roadmap */
-
-.welcome {
-  min-width: 15rem;
-  width: 40vw;
-}
-
-/* Products */
-
-.image-item:hover {
-  flex-grow: 1;
-  width: 120%;
-  cursor: pointer;
-}
-
-.text-containter {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 50vw;
-  height: auto;
+.background {
+  position: absolute;
+  height: 100%;
+  width: 150%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* About */
 
-.about-container {
-  width: 90vw;
+.about-page {
+  display: block;
+  width: 100%;
 }
   
 .about-profile-card p {
@@ -642,16 +633,13 @@ footer p:hover {
 
 .about-card {
   text-align: left;
-  max-width: 50rem;
   min-width: 20rem;
-  width: 80%;
   height: 100%;
   margin-bottom: 5em;
 }
 
 .about-profile-card {
   text-align: center;
-  width: 40%;
   min-width: 20em;
   height: auto;
   padding-bottom: 4em;
@@ -664,6 +652,10 @@ footer p:hover {
 }
 
 /* Contact */
+
+.contact-page {
+  width: 100%;
+}
 
 .contact-card {
   text-align: center;

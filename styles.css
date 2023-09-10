@@ -20,17 +20,14 @@
 
 /* Track */
 html {
-  scrollbar-color: #9E9996 #C7C1B7; /* Set your desired track and handle colors */
-}
-
-/* Handle on hover */
-html:hover {
-  scrollbar-color: #9E9996 #C7C1B7; /* Set your desired handle color on hover */
+  scrollbar-color: var(--secondary-color) var(--primary-color); /* Set your desired track and handle colors */
+  height: -webkit-fill-available;
 }
 
 /* Set overscroll-behavior to none to prevent content from shifting */
 body {
   overscroll-behavior: none;
+  height: -webkit-fill-available;
 }
 
 /* Reset some default styles for consistency */
@@ -158,7 +155,7 @@ header h1 {
 
 .background {
   top: 0;
-  transform: translateZ(-40px) scale(5.5);
+  transform: translateZ(-40px) scale(5);
 }
 
 .background {
@@ -220,6 +217,7 @@ main ul {
   background-color: var(--primary-color);
   min-width: 25em;
   min-height: 44em;
+  padding-bottom: 6em;
 }
 
 .space-home {
@@ -586,6 +584,11 @@ footer p:hover {
   font-size: .9em;
 }
 
+.background {
+  transform: translateZ(-10px) scale(2);
+  height: auto;
+}
+
 main {
   min-height: 50%;
 }
@@ -594,8 +597,18 @@ main {
   width: 100%;
 }
 
+.space-home h2 {
+  margin-left: 2.6rem;
+  font-size: 5em;
+  appearance: none;
+  text-shadow: rgba(0, 0, 0, 0.247) 0 0 20px;
+}
+
 .space-home p {
-  font-size: 2.6em;
+  margin-left: 3rem;
+  font-size: 2em;
+  font-weight: 500;
+  text-shadow: rgb(0, 0, 0) 0 0 5px;
 }
 
 .content-item h2 {
@@ -612,12 +625,11 @@ main {
   margin-bottom: 1em;
 }
 
-.background {
-  position: absolute;
-  height: 100%;
-  width: 150%;
-  object-fit: cover;
-  z-index: -1;
+/* Products */
+
+.products-page{
+  display: block;
+  width: 100%;
 }
 
 /* About */
@@ -640,6 +652,7 @@ main {
 
 .about-profile-card {
   text-align: center;
+  width: 80%;
   min-width: 20em;
   height: auto;
   padding-bottom: 4em;

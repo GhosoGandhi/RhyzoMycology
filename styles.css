@@ -53,7 +53,7 @@ body {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 10px;
+  perspective: 100px;
 }
 
 /* Style the header section */
@@ -155,7 +155,7 @@ header h1 {
 
 .background {
   top: 0;
-  transform: translateZ(-40px) scale(5);
+  transform: translateZ(-100px) scale(2);
 }
 
 .background {

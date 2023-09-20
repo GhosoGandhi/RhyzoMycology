@@ -50,10 +50,28 @@ body {
 }
 
 .wrapper {
+  width: 100vw;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 100px;
+  -webkit-perspective: 100px;
+}
+
+.parallax {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  align-content: center;
+  width: 100vw;
+  min-height: 90%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  z-index: -1;
+  overflow: hidden;
 }
 
 /* Style the header section */
@@ -77,11 +95,6 @@ header {
   font-size: 1.2rem;
 }
 
-header img {
-  width: 2.2em;
-  height: 2.2em;
-}
-
 header h1 {
   color: #faf8f0;
   font-size: 2.4rem;
@@ -89,6 +102,13 @@ header h1 {
 
 .title {
   display: inline-flex;
+}
+
+.title img {
+  width: 2.2em;
+  height: 2.2em;
+  top: 0;
+  left: 0;
 }
 
 .title a {
@@ -133,37 +153,20 @@ header h1 {
 
 /* Parallax Image */
 
-.parallax {
-  position: relative;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: center;
-  display: block;
-  align-content: center;
-  width: 100vw;
-  min-height: 90%;
-  transform-style: preserve-3d;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.parallax img {
-  left: 0;
-  top: 0;
-}
-
-.background {
-  top: 0;
-  transform: translateZ(-100px) scale(2);
-}
-
-.background {
-  position: absolute;
-  height: 100%;
-  width: 100vw;
+.background-img {
   object-fit: cover;
+  transform: translateZ(-100px) scale(2);
+  -webkit-transform: translateZ(-100px);
+  -moz-transform: translateZ(-100px)scale(2);
   z-index: -1;
+  position: absolute;
+  height: auto;
+}
+
+.background-img img {
+  width: 100vw;
+  max-width: 1920px;
+  object-fit: cover;
 }
 
 /* Style the main content section */
@@ -582,11 +585,6 @@ footer p:hover {
 
 .main-links nav ul li a {
   font-size: .9em;
-}
-
-.background {
-  transform: translateZ(-10px) scale(2);
-  height: auto;
 }
 
 main {

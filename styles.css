@@ -154,19 +154,22 @@ header h1 {
 /* Parallax Image */
 
 .background-img {
-  object-fit: cover;
+  width: 100vw;
   transform: translateZ(-100px) scale(2);
   -webkit-transform: translateZ(-100px);
   -moz-transform: translateZ(-100px)scale(2);
   z-index: -1;
   position: absolute;
-  height: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .background-img img {
+  position: relative;
+  overflow: hidden;
   width: 100vw;
-  max-width: 1920px;
-  object-fit: cover;
+  min-width: 960px;
+  min-height: 100vh;
 }
 
 /* Style the main content section */

@@ -166,10 +166,12 @@ header h1 {
 
 .background-img img {
   position: relative;
+  top: -10em;
   overflow: hidden;
+  object-fit: cover;
   width: 100vw;
   min-width: 960px;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 /* Style the main content section */

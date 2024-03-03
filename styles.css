@@ -218,9 +218,9 @@ main ul {
 /* -------HOME PAGE------- */
 
 .home-page {
-  width: 55%;
-  display: wrap;
   text-align: center;
+  position: relative;
+  width: 100vw;
   background-color: var(--primary-color);
   min-width: 25em;
   min-height: 44em;
@@ -307,27 +307,52 @@ body {
 
 .content-area {
   min-height: 24em;
-  position: relative;
-  width: 100%;
+  width: 80%;
   height: auto;
   display: inline-block;
-  justify-content: center;
 }
 
 .content-item {
   width: 100%;
   padding-top: 6em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.content-item h2 {
-  text-align: left;
-  margin-left: 13%;
+#content-half-1{
+  max-width: 60%;
+  min-width: 30em;
 }
 
-.content-item p {
+#content-half-2{
+  width: 30%;
+  min-width: 30em;
+}
+
+.content-words-1{
   text-align: left;
-  margin-left: 13%;
-  max-width: 40em;
+  margin: 0%;
+}
+
+.content-words-1 h2 {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.content-words-1 p {
+  margin-left: 0%;
+  max-width: 80em;
+}
+
+.content-image-1 img{
+  object-fit: cover;
+  height: auto;
+  width: 60%;
+  max-height: 18em;
+  min-width: 30em;
+  margin: 0;
 }
 
 /* -------- PRODUCT PAGE --------*/
@@ -661,6 +686,20 @@ main {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+.content-words-1{
+  text-align: center;
+  margin: 0%;
+}
+
+.content-words-1 h2 {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.content-words-1 p {
+  margin-left: 10%;
+  max-width: 40em;
 
 /* Products */
 

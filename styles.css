@@ -169,9 +169,8 @@ header h1 {
   top: -10em;
   overflow: hidden;
   object-fit: cover;
-  width: 100vw;
-  min-width: 960px;
-  min-height: 90vh;
+  min-width: 200%;
+  min-height: 100vh;
 }
 
 /* Style the main content section */
@@ -228,8 +227,27 @@ main ul {
   padding-bottom: 6em;
 }
 
+.home-background-img {
+  width: 100vw;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.home-background-img img {
+  bottom: 10em;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
 .space-home {
-  height: 26em;
+  min-height: 20em;
+  height: 50vw;
+  max-height: 39em;
   text-align: left;
 }
 
@@ -599,6 +617,21 @@ main {
 
 .home-page {
   width: 100%;
+}
+
+.home-background-img img {
+  top: 0em;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 70vh;
+}
+
+.space-home {
+  min-height: 50vh;
+  height: 50vh;
+  text-align: left;
 }
 
 .space-home h2 {

@@ -758,6 +758,7 @@ main {
 /* Contact */
 
 .contact-page {
+  min-height: 32em;
   width: 100%;
 }
 

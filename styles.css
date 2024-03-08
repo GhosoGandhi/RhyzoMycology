@@ -323,10 +323,14 @@ body {
 
 #content-half-1{
   max-width: 60%;
-  min-width: 30em;
+  min-width: 20em;
 }
 
 #content-half-2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 30%;
   min-width: 30em;
 }
@@ -673,6 +677,10 @@ main {
   text-shadow: rgb(0, 0, 0) 0 0 5px;
 }
 
+.content-item{
+  padding-top: 4em;
+}
+
 .content-item h2 {
   text-align: center;
 }
@@ -700,6 +708,12 @@ main {
 .content-words-1 p {
   margin-left: 10%;
   max-width: 40em;
+}
+
+.content-image-1 img{
+  margin-top: 2em;
+  width: 100vw;
+  min-width: 0em;
 }
 
 /* Products */
